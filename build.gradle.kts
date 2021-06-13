@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.5.10"
 	kotlin("plugin.spring") version "1.5.10"
+	kotlin("plugin.jpa") version "1.5.10"
 }
 
 group = "com.springBoot"
@@ -18,6 +19,10 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+	implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
+	implementation("org.mongodb:mongodb-driver-sync")
+
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -25,6 +30,7 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	implementation("io.github.microutils:kotlin-logging-jvm:2.0.8")
 }
 
 tasks.withType<KotlinCompile> {
